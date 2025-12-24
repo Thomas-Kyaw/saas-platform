@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'com.thomaskyaw'
+version = '0.0.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+dependencies {
+    // so common can reference enums / types from protos if needed
+    api project(':contracts')
+
+    // logging API only (implementation chosen by apps)
+    api 'org.slf4j:slf4j-api:2.0.16'
+
+    // optional: shared DTO annotations (only if you actually use them)
+    api 'com.fasterxml.jackson.core:jackson-annotations:2.17.2'
+}
