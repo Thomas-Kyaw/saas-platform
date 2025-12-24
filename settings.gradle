@@ -1,0 +1,10 @@
+rootProject.name = 'saas-platform'
+include 'contracts', 'common',
+        'api-gateway',
+        'identity-service',
+        'subscription-service',
+        'entitlement-service',
+        'usage-service',
+        'rating-service',
+        'invoice-service',
+        'notification-service'

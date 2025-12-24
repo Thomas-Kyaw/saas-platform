@@ -1,0 +1,43 @@
+plugins {
+    id 'java-library'
+    id 'com.google.protobuf' version '0.9.5'
+}
+
+group = 'com.thomaskyaw'
+version = '0.0.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+dependencies {
+    // protobuf / gRPC runtime (used by generated code)
+    api 'com.google.protobuf:protobuf-java:4.29.2'
+    api 'io.grpc:grpc-protobuf:1.69.0'
+    api 'io.grpc:grpc-stub:1.69.0'
+
+    // for @Generated annotations
+    api 'javax.annotation:javax.annotation-api:1.3.2'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:4.29.2"
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.69.0"
+        }
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                grpc {}
+            }
+        }
+    }
+}
