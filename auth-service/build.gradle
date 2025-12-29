@@ -4,7 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.thomaskyaw'
+group = 'com.thomask yaw'
 version = '0.0.1-SNAPSHOT'
 description = 'auth-service'
 
@@ -31,12 +31,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'io.grpc:grpc-services'
     implementation 'org.springframework.grpc:spring-grpc-server-web-spring-boot-starter'
-    implementation 'io.grpc:grpc-services'
-    implementation 'org.springframework.grpc:spring-grpc-server-web-spring-boot-starter'
     implementation project(':contracts')
     implementation project(':common')
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'

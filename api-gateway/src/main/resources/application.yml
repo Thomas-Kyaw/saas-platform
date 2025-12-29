@@ -21,6 +21,14 @@ spring:
                 - StripPrefix=1
                 - JwtValidation
 
+            - id: subscription-service-route
+              uri: http://subscription-service:4003
+              predicates:
+                - Path=/api/subscriptions/**
+              filters:
+                - StripPrefix=1
+                - JwtValidation
+
 server:
   port: 4000
 
