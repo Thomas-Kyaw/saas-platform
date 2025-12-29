@@ -11,13 +11,26 @@ java {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    // so common can reference enums / types from protos if needed
+    api platform('org.springframework.boot:spring-boot-dependencies:3.2.1')
+
     api project(':contracts')
 
-    // logging API only (implementation chosen by apps)
-    api 'org.slf4j:slf4j-api:2.0.16'
+    // Spring Web (for filters, exceptions)
+    api 'org.springframework.boot:spring-boot-starter-web'
 
-    // optional: shared DTO annotations (only if you actually use them)
-    api 'com.fasterxml.jackson.core:jackson-annotations:2.17.2'
+    // gRPC (for interceptors)
+    api 'io.grpc:grpc-api:1.69.0'
+    api 'io.grpc:grpc-context:1.69.0'
+
+    // Kafka
+    api 'org.springframework.kafka:spring-kafka'
+
+    // Utils
+    api 'org.slf4j:slf4j-api'
+    api 'com.fasterxml.jackson.core:jackson-databind'
 }

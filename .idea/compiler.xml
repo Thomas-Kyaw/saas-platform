@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="25" />
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="api-gateway" options="-parameters" />
-      <module name="api-gateway.main" options="-parameters" />
-      <module name="api-gateway.test" options="-parameters" />
-      <module name="com.thomaskyaw.usage-service.main" options="-parameters" />
-      <module name="com.thomaskyaw.usage-service.test" options="-parameters" />
-      <module name="entitlement-service" options="-parameters" />
-      <module name="entitlement-service.main" options="-parameters" />
-      <module name="entitlement-service.test" options="-parameters" />
-      <module name="identity-service" options="-parameters" />
-      <module name="identity-service.main" options="-parameters" />
-      <module name="identity-service.test" options="-parameters" />
-      <module name="invoice-service" options="-parameters" />
-      <module name="invoice-service.main" options="-parameters" />
-      <module name="invoice-service.test" options="-parameters" />
-      <module name="rating-service" options="-parameters" />
-      <module name="rating-service.main" options="-parameters" />
-      <module name="rating-service.test" options="-parameters" />
-      <module name="subscription-service" options="-parameters" />
-      <module name="subscription-service.main" options="-parameters" />
-      <module name="subscription-service.test" options="-parameters" />
-      <module name="usage-service" options="-parameters" />
-      <module name="usage-service.main" options="-parameters" />
-      <module name="usage-service.test" options="-parameters" />
+      <module name="saas-platform.api-gateway" options="-parameters" />
+      <module name="saas-platform.api-gateway.main" options="-parameters" />
+      <module name="saas-platform.api-gateway.test" options="-parameters" />
+      <module name="saas-platform.auth-service" options="-parameters" />
+      <module name="saas-platform.auth-service.main" options="-parameters" />
+      <module name="saas-platform.auth-service.test" options="-parameters" />
+      <module name="saas-platform.entitlement-service" options="-parameters" />
+      <module name="saas-platform.entitlement-service.main" options="-parameters" />
+      <module name="saas-platform.entitlement-service.test" options="-parameters" />
+      <module name="saas-platform.identity-service" options="-parameters" />
+      <module name="saas-platform.identity-service.main" options="-parameters" />
+      <module name="saas-platform.identity-service.test" options="-parameters" />
+      <module name="saas-platform.invoice-service" options="-parameters" />
+      <module name="saas-platform.invoice-service.main" options="-parameters" />
+      <module name="saas-platform.invoice-service.test" options="-parameters" />
+      <module name="saas-platform.notification-service" options="-parameters" />
+      <module name="saas-platform.notification-service.main" options="-parameters" />
+      <module name="saas-platform.notification-service.test" options="-parameters" />
+      <module name="saas-platform.rating-service" options="-parameters" />
+      <module name="saas-platform.rating-service.main" options="-parameters" />
+      <module name="saas-platform.rating-service.test" options="-parameters" />
+      <module name="saas-platform.subscription-service" options="-parameters" />
+      <module name="saas-platform.subscription-service.main" options="-parameters" />
+      <module name="saas-platform.subscription-service.test" options="-parameters" />
+      <module name="saas-platform.usage-service" options="-parameters" />
+      <module name="saas-platform.usage-service.main" options="-parameters" />
+      <module name="saas-platform.usage-service.test" options="-parameters" />
     </option>
   </component>
 </project>

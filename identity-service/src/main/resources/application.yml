@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: identity-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/db}
+    username: ${SPRING_DATASOURCE_USERNAME:thomaskyaw}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+  sql:
+    init:
+      mode: ${SPRING_SQL_INIT_MODE:always}
+
+server:
+  port: 4002
+
+grpc:
+  server:
+    port: ${GRPC_SERVER_PORT:9090}

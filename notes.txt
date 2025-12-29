@@ -1,0 +1,22 @@
+Application-controlled
+
+Every time you update the row, you explicitly set it:
+
+UPDATE credentials
+SET
+  password_hash = ?,
+  updated_at = now()
+WHERE user_id = ?;
+
+
+Pros:
+
+Simple
+
+Explicit
+
+No DB magic
+
+Works well with JPA / Hibernate
+
+This is what most Spring apps do.

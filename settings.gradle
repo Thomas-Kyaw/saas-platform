@@ -7,4 +7,5 @@ include 'contracts', 'common',
         'usage-service',
         'rating-service',
         'invoice-service',
-        'notification-service'
+        'notification-service',
+        'auth-service'

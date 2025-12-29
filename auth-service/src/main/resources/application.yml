@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/db}
+    username: ${SPRING_DATASOURCE_USERNAME:thomaskyaw}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+  sql:
+    init:
+      mode: ${SPRING_SQL_INIT_MODE:always}
+
+server:
+  port: 4001
+
+jwt:
+  secret: ${JWT_SECRET:bXlzZWNyZXRrZXltdXN0YmVsb25nZW5vdWdoZm9yaG1hY3NoYTI1NmFsZ29yaXRobQ==}
+  expiration: ${JWT_EXPIRATION:3600000}
+
+identity:
+  service:
+    host: ${IDENTITY_SERVICE_HOST:localhost}
+    port: ${IDENTITY_SERVICE_PORT:9090}

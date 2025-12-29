@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package identity.v1;
+
+option java_multiple_files = true;
+option java_package = "com.thomaskyaw.saas.identity.v1";
+option java_outer_classname = "IdentityProto";
+
+// Service definition for Identity operations
+service IdentityService {
+  // Verifies user credentials (used by Auth Service)
+  rpc VerifyCredentials(VerifyCredentialsRequest) returns (VerifyCredentialsResponse);
+
+  // Gets user details by ID
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+
+  // Gets user details by Email
+  rpc GetUserByEmail(GetUserByEmailRequest) returns (GetUserResponse);
+
+  // Creates a new user
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+}
+
+message VerifyCredentialsRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message VerifyCredentialsResponse {
+  bool valid = 1;
+  string user_id = 2;
+  string role = 3;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserByEmailRequest {
+  string email = 1;
+}
+
+message GetUserResponse {
+  string user_id = 1;
+  string email = 2;
+  bool active = 3;
+  repeated TenantRole roles = 4;
+}
+
+message TenantRole {
+  string tenant_id = 1;
+  string role = 2;
+}
+
+message CreateUserRequest {
+  string email = 1;
+  string password = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string role = 5;
+}
+
+message CreateUserResponse {
+  string user_id = 1;
+  string email = 2;
+}

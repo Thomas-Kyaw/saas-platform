@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.saas.events.v1;
+
+option java_multiple_files = true;
+option java_package = "com.saas.events.v1";
+
+message UsageRecorded {
+  string event_id = 1;
+  string tenant_id = 2;
+  string metric = 3;
+  int64 amount = 4;
+  int64 epoch_ms = 5;
+  map<string, string> attributes = 6;
+}
+
+message TenantCreated {
+  string tenant_id = 1;
+  string name = 2;
+  string created_at = 3;
+}
+
+message SubscriptionActivated {
+  string tenant_id = 1;
+  string plan_id = 2;
+  string period_start = 3;
+  string period_end = 4;
+}
+
+message InvoiceIssued {
+  string tenant_id = 1;
+  string invoice_id = 2;
+  string period = 3;
+  double total_amount = 4; // Using double for simplicity in proto, but Money preferred
+}

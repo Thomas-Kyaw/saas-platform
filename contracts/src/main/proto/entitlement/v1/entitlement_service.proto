@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.saas.entitlement.v1;
+
+option java_multiple_files = true;
+option java_package = "com.saas.entitlement.v1";
+
+service EntitlementService {
+  rpc CanConsume(CanConsumeRequest) returns (CanConsumeResponse);
+}
+
+message CanConsumeRequest {
+  string tenant_id = 1;
+  string metric = 2;
+  int64 amount = 3;
+}
+
+message CanConsumeResponse {
+  bool allowed = 1;
+  int64 remaining = 2; // -1 if unlimited
+  string reason = 3;
+}
