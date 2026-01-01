@@ -16,7 +16,7 @@ server:
   port: 4001
 
 jwt:
-  secret: ${JWT_SECRET:bXlzZWNyZXRrZXltdXN0YmVsb25nZW5vdWdoZm9yaG1hY3NoYTI1NmFsZ29yaXRobQ==}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:3600000}
 
 identity:
