@@ -9,9 +9,6 @@ public record CreateUserRequest(
         String email,
 
         @NotBlank(message = "Display name is required")
-        String displayName,
-
-        @NotBlank(message = "Password is required")
-        String password
+        String displayName
 ) {
 }

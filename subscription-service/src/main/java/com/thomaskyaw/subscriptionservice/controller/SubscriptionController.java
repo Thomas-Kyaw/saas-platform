@@ -30,14 +30,14 @@ public class SubscriptionController {
     @PostMapping
     public ResponseEntity<SubscriptionResponse> createSubscription(
             @Valid @RequestBody CreateSubscriptionRequest request) {
-        TenantSubscription subscription = subscriptionService.createSubscription(request.planId());
+        TenantSubscription subscription = subscriptionService.createSubscription(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(SubscriptionMapper.toSubscriptionResponse(subscription));
     }
 
-    @PutMapping("/upgrade")
-    public ResponseEntity<SubscriptionResponse> upgradeSubscription(
+    @PutMapping("/change")
+    public ResponseEntity<SubscriptionResponse> changeSubscription(
             @Valid @RequestBody UpgradeSubscriptionRequest request) {
-        TenantSubscription subscription = subscriptionService.upgradePlan(request.newPlanId());
+        TenantSubscription subscription = subscriptionService.changeSubscription(request.newPlanId());
         return ResponseEntity.ok(SubscriptionMapper.toSubscriptionResponse(subscription));
     }
 

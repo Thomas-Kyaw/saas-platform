@@ -1,6 +1,7 @@
 package com.thomaskyaw.subscriptionservice.service;
 
 import com.thomaskyaw.subscriptionservice.model.SubscriptionPlan;
+import com.thomaskyaw.subscriptionservice.model.PlanTier;
 import com.thomaskyaw.subscriptionservice.repository.SubscriptionPlanRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,5 +26,10 @@ public class PlanService {
     public SubscriptionPlan getPlanById(UUID id) {
         return planRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Plan not found: " + id));
+    }
+
+    public SubscriptionPlan getPlanByTier(PlanTier tier) {
+        return planRepository.findByTier(tier)
+            .orElseThrow(() -> new IllegalArgumentException("Plan not found for tier: " + tier));
     }
 }

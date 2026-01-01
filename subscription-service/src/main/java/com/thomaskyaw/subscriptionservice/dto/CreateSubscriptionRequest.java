@@ -6,6 +6,8 @@ import java.util.UUID;
 
 public record CreateSubscriptionRequest(
     @NotNull(message = "Plan ID is required")
-    UUID planId
+    UUID planId,
+
+    boolean startTrial
 ) {
 }

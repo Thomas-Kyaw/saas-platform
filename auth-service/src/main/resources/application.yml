@@ -23,3 +23,8 @@ identity:
   service:
     host: ${IDENTITY_SERVICE_HOST:localhost}
     port: ${IDENTITY_SERVICE_PORT:9090}
+    http-url: ${IDENTITY_SERVICE_HTTP_URL:http://localhost:4002}
+
+subscription:
+  service:
+    url: ${SUBSCRIPTION_SERVICE_URL:http://localhost:4003}

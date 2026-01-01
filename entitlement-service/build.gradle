@@ -25,8 +25,11 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'io.grpc:grpc-services'
     implementation 'org.springframework.grpc:spring-grpc-spring-boot-starter'
+    runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-data-redis-test'
     testImplementation 'org.springframework.grpc:spring-grpc-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

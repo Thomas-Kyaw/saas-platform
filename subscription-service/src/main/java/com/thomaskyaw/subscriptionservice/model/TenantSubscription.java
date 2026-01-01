@@ -40,6 +40,9 @@ public class TenantSubscription {
     @Column(name = "auto_renew", nullable = false)
     private Boolean autoRenew = true;
 
+    @Column(name = "trial_ends_at")
+    private OffsetDateTime trialEndsAt;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
@@ -119,5 +122,13 @@ public class TenantSubscription {
 
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public OffsetDateTime getTrialEndsAt() {
+        return trialEndsAt;
+    }
+
+    public void setTrialEndsAt(OffsetDateTime trialEndsAt) {
+        this.trialEndsAt = trialEndsAt;
     }
 }

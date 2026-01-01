@@ -24,6 +24,9 @@ public class User {
     @Column(name = "display_name", nullable = false, length = 255)
     private String displayName;
 
+    @Column(name = "password_hash", nullable = false, length = 255)
+    private String passwordHash;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 30)
     private UserStatus status;
@@ -58,6 +61,14 @@ public class User {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 
     public UserStatus getStatus() {
